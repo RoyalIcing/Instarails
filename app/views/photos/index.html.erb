@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+<section>
+  <% @photos.each do |photo| %>
+    <%= link_to image_tag(photo.image.thumb_200.url), photo %></td>
+  <% end %>
+</section>
+
+<nav>
+  <%= link_to 'New Photo', new_photo_path %>
+</nav>

@@ -1,0 +1,16 @@
+<div id="notice"><%= notice %></div>
+
+<figure>
+  <%= image_tag @photo.image.url %>
+</figure>
+
+<p>
+  <strong><%= @photo.user.email %></strong>
+  <%= @photo.description %>
+</p>
+
+<nav>
+  <% if @photo.user == current_user %>
+    <%= link_to 'Edit', edit_photo_path(@photo) %>
+  <% end %>
+</nav>
