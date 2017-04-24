@@ -1,0 +1,9 @@
+<h1>Users</h1>
+
+<% @users.each do |user| %>
+  <div>
+    <h2><%= link_to user.email, user %></h2>
+    <%= render 'photos/grid', photos: user.photos %>
+    <p><%= pluralize user.photos.count, 'photo' %></p>
+  </div>
+<% end %>

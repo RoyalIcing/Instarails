@@ -1,0 +1,5 @@
+<section>
+    <% photos.each do |photo| %>
+      <%= link_to (image_tag photo.image.thumb_200.url), photo %>
+    <% end %>
+</section>
