@@ -5,13 +5,13 @@
 </figure>
 
 <%= form_for @photo, url: photo_like_path(@photo), method: :patch do |f| %>
-  <%= f.button like_icon(@photo.liked_by?(current_user)) %>
+  <%= f.button like_icon(@photo.liked_by?(current_user)), class: 'button button-clear' %>
 <% end %>
 
-<p>
+<div>
   <strong><%= @photo.user.email %></strong>
   <%= @photo.description %>
-</p>
+</div>
 
 <% @comments.each do |comment| %>
   <div>
