@@ -15,3 +15,14 @@
         color: inherit;
     }
 }
+
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    &--photo {
+        flex: 0 0 50%;
+        padding: 0 0.25rem;
+    }
+}
