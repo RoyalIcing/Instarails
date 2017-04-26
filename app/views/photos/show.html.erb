@@ -1,30 +1,21 @@
-<div id="notice"><%= notice %></div>
-
-<figure>
+<figure class="photo-figure">
   <%= image_tag @photo.image.url %>
 </figure>
 
-<%= form_for @photo, url: photo_like_path(@photo), method: :patch do |f| %>
-  <%= f.button like_icon(@photo.liked_by?(current_user)), class: 'button button-clear' %>
-<% end %>
+<div class="photo-actions">
+  <%= form_for @photo, url: photo_like_path(@photo), method: :patch do |f| %>
+    <%= f.button like_icon(@photo.liked_by?(current_user)), class: 'button button-clear' %>
+  <% end %>
+  <%= link_to comments_icon, photo_comments_path(@photo) %>
+</div>
 
 <div>
   <strong><%= @photo.user.email %></strong>
   <%= @photo.description %>
 </div>
 
-<% @comments.each do |comment| %>
-  <div>
-    <strong><%= comment.user.email %></strong>
-    <%= comment.content %>
-    <small><%= time_ago_in_words comment.created_at %> ago</small>
-  </div>
-<% end %>
-
-<%= form_for @new_comment do |f| %>
-  <%= f.text_area :content %>
-  <%= f.submit 'Post' %>
-<% end %>
+<%= render 'photo_comments/list', comments: @comments %>
+<%#= render 'photo_comments/form', comment: @new_comment %>
 
 <nav>
   <% if @photo.user == current_user %>

@@ -1,4 +1,10 @@
 class PhotoCommentsController < ApplicationController
+  def index
+    @photo = Photo.find(params[:id])
+    @comments = @photo.comments.all
+    @new_comment = @photo.comments.build
+  end
+
   def create
     photo = Photo.find(params[:id])
     comment = PhotoComment.new(comment_params)

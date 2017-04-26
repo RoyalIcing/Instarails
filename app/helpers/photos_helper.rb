@@ -6,4 +6,8 @@ module PhotosHelper
       '<i class="fa fa-heart-o fa-3x" aria-hidden="true"></i>'.html_safe
     end
   end
+
+  def comments_icon
+    '<i class="fa fa-comment-o fa-3x" aria-hidden="true"></i>'.html_safe
+  end
 end

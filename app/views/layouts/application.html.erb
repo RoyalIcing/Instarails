@@ -16,8 +16,11 @@
   </head>
 
   <body>
-    <main>
+    <main class="container">
       <%= render 'nav/primary' %>
+
+      <div id="notice"><%= notice %></div>
+      <div id="alert"><%= alert %></div>
 
       <%= yield %>
     </main>

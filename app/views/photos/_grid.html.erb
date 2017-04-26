@@ -1,5 +1,7 @@
-<section>
+<section class="clearfix">
     <% photos.each do |photo| %>
-      <%= link_to (image_tag photo.image.thumb_200.url), photo %>
+      <div class="grid--photo">
+        <%= link_to (image_tag photo.image.thumb_200.url), photo %>
+      </div>
     <% end %>
 </section>
