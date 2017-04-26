@@ -13,7 +13,6 @@ class PhotosController < ApplicationController
   def show
     @new_comment = @photo.comments.build
     @comments = @photo.comments.all
-    puts @photo.comments.count
   end
 
   # GET /photos/new
