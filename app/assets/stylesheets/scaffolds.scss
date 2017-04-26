@@ -23,6 +23,13 @@ nav {
   margin-bottom: 1rem;
 }
 
+figure {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 div {
   &.field, &.actions {
     margin-bottom: 10px;
