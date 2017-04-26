@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :photos
+  resources :photos do
+    member do
+      resource :photo_likes, path: 'like', only: [:update]
+    end
+    # PATCH /photos/:id/like
+
+    #resources :comments
+  end
   devise_for :users
   resources :users, only: [:index, :show]
   root 'feed#index'
