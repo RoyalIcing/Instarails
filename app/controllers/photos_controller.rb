@@ -11,6 +11,9 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
+    @new_comment = @photo.comments.build
+    @comments = @photo.comments.all
+    puts @photo.comments.count
   end
 
   # GET /photos/new

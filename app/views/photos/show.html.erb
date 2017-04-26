@@ -13,6 +13,19 @@
   <%= @photo.description %>
 </p>
 
+<% @comments.each do |comment| %>
+  <div>
+    <strong><%= comment.user.email %></strong>
+    <%= comment.content %>
+    <small><%= time_ago_in_words comment.created_at %> ago</small>
+  </div>
+<% end %>
+
+<%= form_for @new_comment do |f| %>
+  <%= f.text_area :content %>
+  <%= f.submit 'Post' %>
+<% end %>
+
 <nav>
   <% if @photo.user == current_user %>
     <%= link_to 'Edit', edit_photo_path(@photo) %>
