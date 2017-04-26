@@ -9,6 +9,11 @@
   <%= @photo.description %>
 </p>
 
+<%= form_for @photo_like, method: :patch do |f| %>
+  <strong><%= @photo.liked_by?(current_user) ? 'Heart' : 'No heart' %></strong>
+  <%= f.submit 'Like' %>
+<% end %>
+
 <nav>
   <% if @photo.user == current_user %>
     <%= link_to 'Edit', edit_photo_path(@photo) %>
