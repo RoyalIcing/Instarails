@@ -4,8 +4,8 @@
   <%= image_tag @photo.image.url %>
 </figure>
 
-<%= form_for @photo_like, method: :patch do |f| %>
-  <%= f.submit @photo.liked_by?(current_user) ? 'Unlike' : 'Like' %>
+<%= form_for @photo, url: photo_like_path(@photo), method: :patch do |f| %>
+  <%= f.button like_icon(@photo.liked_by?(current_user)) %>
 <% end %>
 
 <p>

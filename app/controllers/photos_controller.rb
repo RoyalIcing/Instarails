@@ -11,7 +11,6 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
-    @photo_like = PhotoLike.new(photo: @photo)
   end
 
   # GET /photos/new

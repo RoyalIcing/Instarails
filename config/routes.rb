@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :photos do
     member do
-      resource :photo_likes, path: 'like', only: [:update]
+      resource :photo_like, path: 'like', only: [:update]
     end
     # PATCH /photos/:id/like
 
